@@ -7,6 +7,12 @@ class StoriesController < ApplicationController
     @username = 'willmatty'
     @now = Time.now
 
-    @stories = ['Google', 'Facebook', 'LinkedIn', 'Twitter']
+    # Hard_coded == bad? => true
+    # @stories = ['Google', 'Facebook', 'LinkedIn', 'Twitter']
+
+    # Set the variable @stories
+    # to all the records in our story database table
+    @stories = Story.all
   end
+  
 end
