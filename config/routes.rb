@@ -8,4 +8,7 @@ Stack::Application.routes.draw do
   # edit, update, destroy
   resources :stories
 
+  # let's add in a homepage
+  root 'stories#index'
+
 end
