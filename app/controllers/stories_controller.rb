@@ -5,5 +5,6 @@ class StoriesController < ApplicationController
 
   def index
     @username = 'willmatty'
+    @now = Time.now
   end
 end
