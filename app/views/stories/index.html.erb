@@ -3,3 +3,17 @@
 <p>
   My username is <%= @username %>
 </p>
+
+<p>
+  The time now is <%= @now %>
+</p>
+
+<ul>
+<% @stories.each do |st| %>
+  
+  <li>
+    <%= st %>
+  </li>
+
+<% end -%>
+</ul>

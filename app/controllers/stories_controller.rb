@@ -6,5 +6,7 @@ class StoriesController < ApplicationController
   def index
     @username = 'willmatty'
     @now = Time.now
+
+    @stories = ['Google', 'Facebook', 'LinkedIn', 'Twitter']
   end
 end
