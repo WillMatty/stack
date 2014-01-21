@@ -43,3 +43,9 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Make the forms easier to code
+gem 'simple_form'
+
+# Add project styles
+gem 'steer'

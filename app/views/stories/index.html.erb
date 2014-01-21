@@ -1,19 +1,21 @@
-<h2>Hello, world!</h2>
-
-<p>
-  My username is <%= @username %>
-</p>
-
-<p>
-  The time now is <%= @now %>
-</p>
-
-<ul>
-<% @stories.each do |st| %>
+<section class='stories'>
+<% @stories.each do |story| %>
   
-  <li>
-    <%= st %>
-  </li>
+  <div class='story'>
+    <h2><%= link_to story.title, story.url %></h2>
+    <p><%= story.description %></p>
+
+    <ul>
+      <li>Upvote</li>
+      <li>
+        <%= link_to '3 comments', story_path(story) %>
+      </li>
+      <li>2 votes</li>
+      <li><%= time_ago_in_words story.created_at %> ago</li>
+    </ul>
+  </div>
 
 <% end -%>
-</ul>
+</section>
+
+<%= link_to "Submit a link", new_story_path %>
