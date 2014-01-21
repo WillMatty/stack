@@ -49,3 +49,5 @@ gem 'simple_form'
 
 # Add project styles
 gem 'steer'
+
+gem 'stringex'
