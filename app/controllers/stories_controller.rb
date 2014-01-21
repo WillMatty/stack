@@ -46,11 +46,13 @@ class StoriesController < ApplicationController
   def update
     @story = Story.find(params[:id])
 
-    @story.update(story_params)
+    if @story.update(story_params)
+      flash[:success] = "Yay! You've updated this story"
 
-    flash[:success] = "Yay! You've updated this story"
-
-    redirect_to story_path(@story)
+      redirect_to story_path(@story)
+    else
+      render 'edit'
+    end
   end
 
   # Actually destroy the record in the database
