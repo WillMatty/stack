@@ -26,13 +26,16 @@ class StoriesController < ApplicationController
   def create
     @story = Story.new(story_params)
 
-    @story.save
+    if @story.save
+      # Let's add a flash of content to tell the user we've added this
+      flash[:success] = "You've added a link! Yay!"
 
-    # Let's add a flash of content to tell the user we've added this
-    flash[:success] = "You've added a link! Yay!"
+      # Go back to the home page
+      redirect_to root_path
 
-    # Go back to the home page
-    redirect_to root_path
+    else
+      render 'new'
+    end
   end
 
   def edit
