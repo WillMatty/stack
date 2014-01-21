@@ -50,4 +50,8 @@ gem 'simple_form'
 # Add project styles
 gem 'steer'
 
+# Prettify url titles
 gem 'stringex'
+
+# Add an admin centre to our site
+gem 'activeadmin', github: 'gregbell/active_admin'

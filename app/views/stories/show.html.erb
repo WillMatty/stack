@@ -1,3 +1,5 @@
+<%= content_for :page_title, @story.title %>
+
 <div class='single_story story'>
 
   <h2>
@@ -11,6 +13,7 @@
   <ul>
     <li>Upvote</li>
     <li>1 vote</li>
+    <li><%= @story.nice_url %></li>
     <li><%= time_ago_in_words @story.created_at %> ago</li>
   </ul>
 

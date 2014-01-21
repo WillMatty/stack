@@ -1,5 +1,7 @@
 Stack::Application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   # The routes file matches our URLs up
   # with our controllers
 
