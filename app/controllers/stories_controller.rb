@@ -1,6 +1,11 @@
 class StoriesController < ApplicationController
+
   # Controllers manage the urls,
   # the data from the models, and our HTML views
+
+  # Before we run the show, edit, update and destroy
+  # Let's find the story we're talking about
+  before_action :find_story, only: [:show, :edit, :update, :destroy]
 
   def index
     @username = 'willmatty'
@@ -14,7 +19,7 @@ class StoriesController < ApplicationController
   # This is the individual story page
   def show
     # params[:id] is the number in the url we are looking for
-    @story = Story.find(params[:id])
+    # @story = Story.find(params[:id])
   end
 
   def new
@@ -39,12 +44,12 @@ class StoriesController < ApplicationController
   end
 
   def edit
-    @story = Story.find(params[:id])
+    # @story = Story.find(params[:id])
   end
 
   # Actually update the database
   def update
-    @story = Story.find(params[:id])
+    # @story = Story.find(params[:id])
 
     if @story.update(story_params)
       flash[:success] = "Yay! You've updated this story"
@@ -57,7 +62,7 @@ class StoriesController < ApplicationController
 
   # Actually destroy the record in the database
   def destroy
-    @story = Story.find(params[:id])
+    # @story = Story.find(params[:id])
 
     @story.destroy
 
@@ -69,6 +74,12 @@ class StoriesController < ApplicationController
   # Shortcut for getting form data
   def story_params
     params.require(:story).permit(:title, :description, :url)
+  end
+
+  # Shortcut for finding the story from the url
+  # find_story isn't part of rails, it's something we made ourselves
+  def find_story
+    @story = Story.find(params[:id])
   end
 
 end
