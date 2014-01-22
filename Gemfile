@@ -3,8 +3,11 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use sqlite3 as the development database for Active Record
+gem 'sqlite3', group: :development
+
+# Postgresql is the database on Heroku
+gem 'pg', group: :production
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -64,3 +67,6 @@ gem 'kaminari'
 
 # Let's add in tags to our stories
 gem 'acts-as-taggable-on'
+
+# To make Heroku work with Rails 4
+gem 'rails_12factor', group: :production
