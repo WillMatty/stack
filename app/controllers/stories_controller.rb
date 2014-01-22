@@ -24,6 +24,10 @@ class StoriesController < ApplicationController
       @stories = Story.order('votes_count desc, created_at desc')
     end
 
+    # Add in my pagination
+    # Overwrite the @stories variable with a paginated version
+    @stories = @stories.page(params[:page]).per(5)
+
   end
 
   # This is the individual story page
