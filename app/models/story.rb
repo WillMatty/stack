@@ -29,8 +29,8 @@ class Story < ActiveRecord::Base
     # and I want to remove http://
     # and I want to remove www.
     # gsub is global substitution
-    url.gsub('http://', '').gsub('www.', '')
-    # url.gsub(%r(http://)|(www\.), '')
+    # url.gsub('http://', '').gsub('www.', '')
+    url.gsub(%r((http://)|(www.)), '')
   end
 
 end
