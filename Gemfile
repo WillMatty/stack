@@ -6,7 +6,7 @@ gem 'rails', '4.0.2'
 # Use sqlite3 as the development database for Active Record
 gem 'sqlite3', group: :development
 
-# Postgresql is the database on Heroku
+# PostgreSQL is the database on Heroku
 gem 'pg', group: :production
 
 # Use SCSS for stylesheets
