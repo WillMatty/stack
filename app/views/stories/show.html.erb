@@ -11,8 +11,8 @@
   </p>
 
   <ul>
-    <li>Upvote</li>
-    <li>1 vote</li>
+    <li><%= link_to 'Upvote', story_votes_path(@story), method: :post %></li>
+    <li><%= pluralize @story.votes.count, 'vote' %></li>
     <li><%= @story.nice_url %></li>
     <li><%= time_ago_in_words @story.created_at %> ago</li>
   </ul>
@@ -28,5 +28,19 @@
   </div>
 
   <h3><%= pluralize(@story.comments.count, 'comment') %></h3>
-  
+
+  <% @story.comments.each do |comment| %>
+
+    <div class="comment">
+      <%= simple_format comment.body %>
+
+      <p><%= time_ago_in_words comment.created_at %> ago</p>
+    </div>
+
+  <% end -%>
+
+  <p>
+    <%= link_to "Add a comment", new_story_comment_path(@story) %>
+  </p>
+
 </div>

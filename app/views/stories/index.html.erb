@@ -8,12 +8,18 @@
       <p><%= story.description %></p>
 
       <ul>
-        <li>Upvote</li>
         <li>
-          <%= link_to '3 comments', story_path(story) %>
+          <%= link_to 'Upvote', story_votes_path(story, back_to: 'home'), method: :post %>
         </li>
-        <li>2 votes</li>
+
+        <li>
+          <%= link_to pluralize(story.comments.count, 'comment'), story_path(story) %>
+        </li>
+
+        <li><%= pluralize story.votes.count, 'vote' %></li>
+
         <li><%= story.nice_url %></li>
+
         <li><%= time_ago_in_words story.created_at %> ago</li>
       </ul>
     </div>

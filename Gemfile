@@ -55,3 +55,6 @@ gem 'stringex'
 
 # Add an admin centre to our site
 gem 'activeadmin', github: 'gregbell/active_admin'
+
+# Make sure no one swears in the comments..
+gem 'obscenity'

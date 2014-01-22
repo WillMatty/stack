@@ -19,7 +19,8 @@
 
       <nav>
         <%= link_to "Top", root_path %>
-        <%= link_to "Recent", root_path %>
+        <%= link_to "Recent", root_path(sort: 'recent') %>
+        <%= link_to "Featured", root_path(sort: 'featured') %>
 
         <%= link_to "Submit", new_story_path %>
       </nav>

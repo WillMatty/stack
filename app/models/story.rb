@@ -1,8 +1,9 @@
 class Story < ActiveRecord::Base
 
   # This is a connection in rails
-  # Our story has many comments
+  # Our story has many comments AND has many votes
   has_many :comments
+  has_many :votes
 
   validates :title, length: { minimum: 5 }
   validates :description, length: { minimum: 1 }

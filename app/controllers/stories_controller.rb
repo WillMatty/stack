@@ -8,12 +8,22 @@ class StoriesController < ApplicationController
   before_action :find_story, only: [:show, :edit, :update, :destroy]
 
   def index
-    @username = 'willmatty'
-    @now = Time.now
-
     # Set the variable @stories
     # to all the records in our story database table
-    @stories = Story.order('created_at desc')
+
+    # if it has ?sort=recent in the url, then sort by created_at
+    # else show the popilar ones
+    if params[:sort] == 'recent'
+      # sort by created_at
+      @stories = Story.order('created_at desc')
+    elsif params[:sort] == 'featured'
+      @stories = Story.where(is_featured: true)
+                      .order('is_featured desc, votes_count desc')
+    else
+      # sort by popular
+      @stories = Story.order('votes_count desc, created_at desc')
+    end
+
   end
 
   # This is the individual story page

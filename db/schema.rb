@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140121125235) do
+ActiveRecord::Schema.define(version: 20140121155800) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -57,6 +57,15 @@ ActiveRecord::Schema.define(version: 20140121125235) do
     t.string   "title"
     t.string   "description"
     t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "votes_count"
+    t.integer  "comments_count"
+    t.boolean  "is_featured",    default: false
+  end
+
+  create_table "votes", force: true do |t|
+    t.integer  "story_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
