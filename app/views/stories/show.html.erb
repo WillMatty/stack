@@ -27,6 +27,14 @@
       %>
   </div>
 
+  <h3><%= pluralize @story.tags.count, 'tag' %></h3>
+
+  <ul>
+    <% @story.tags.each do |tag| %>
+    <li><%= tag %></li>
+    <% end -%>
+  </ul>
+
   <h3><%= pluralize(@story.comments.count, 'comment') %></h3>
 
   <% @story.comments.each do |comment| %>

@@ -58,3 +58,9 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 
 # Make sure no one swears in the comments..
 gem 'obscenity'
+
+# Let's add pagination into our website
+gem 'kaminari'
+
+# Let's add in tags to our stories
+gem 'acts-as-taggable-on'

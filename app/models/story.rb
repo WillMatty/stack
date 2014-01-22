@@ -5,6 +5,10 @@ class Story < ActiveRecord::Base
   has_many :comments
   has_many :votes
 
+  # Set up acts-as-taggable-on (tags)
+  acts_as_taggable
+
+
   validates :title, length: { minimum: 5 }
   validates :description, length: { minimum: 1 }
   validates :url, presence: true, uniqueness: { message: 'No reposts!' }
@@ -26,7 +30,7 @@ class Story < ActiveRecord::Base
     # and I want to remove www.
     # gsub is global substitution
     url.gsub('http://', '').gsub('www.', '')
-    # url.gsub(/(http:\/\/)|(www\.)/, '')
+    # url.gsub(%r(http://)|(www\.), '')
   end
 
 end

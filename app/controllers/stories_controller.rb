@@ -87,7 +87,7 @@ class StoriesController < ApplicationController
 
   # Shortcut for getting form data
   def story_params
-    params.require(:story).permit(:title, :description, :url)
+    params.require(:story).permit(:title, :description, :url, :tag_list)
   end
 
   # Shortcut for finding the story from the url
