@@ -70,3 +70,8 @@ gem 'acts-as-taggable-on'
 
 # To make Heroku work with Rails 4
 gem 'rails_12factor', group: :production
+
+
+# Scraping gem that work together
+gem 'httparty'
+gem 'nokogiri'

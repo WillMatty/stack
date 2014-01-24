@@ -26,7 +26,7 @@ class StoriesController < ApplicationController
 
     # Add in my pagination
     # Overwrite the @stories variable with a paginated version
-    @stories = @stories.page(params[:page]).per(5)
+    @stories = @stories.page(params[:page]).per(10)
 
   end
 
