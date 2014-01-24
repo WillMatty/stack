@@ -11,6 +11,8 @@ task scrape_reddit: :environment do
 
   @html = Nokogiri::HTML(@raw_html.body)
 
+  # Story.delete_all
+
   # .css works like a CSS selector
   @html.css("#siteTable .entry .title").each do |link|
 
